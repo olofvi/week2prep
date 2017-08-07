@@ -1,15 +1,21 @@
-puts 'Nice of you to visit grandma!'
-input = gets.chomp
+puts "Say something to grandma?".upcase
+answer = " "
+number = 1900
+bye_count = 0
 
-while input !='BYE'
-
-  if input == input.upcase
-    puts 'NO NOT SINCE ' + (1930 +rand(17)).to_s + '!'
-
+while true
+  answer = gets.chomp
+  if answer == answer.downcase
+    bye_count = 0
+    puts "Huh! Speak up, Sonny!".upcase
+  elsif answer == "BYE"
+    bye_count = bye_count + 1
+    if bye_count == 3
+      puts "Okay then!".upcase
+      break
+    end
   else
-    puts 'HUH?! SPEAK UP, SONNY'
-
-  end 
-  input = gets.chomp
+    bye_count = 0
+    puts "No, not since #{number + rand(35)}".upcase
+  end
 end
-puts 'OK. BYE!'
