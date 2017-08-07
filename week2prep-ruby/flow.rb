@@ -1,21 +1,18 @@
-puts "Say something to grandma?".upcase
-answer = " "
-number = 1900
-bye_count = 0
+puts 'Input a starting year:'
+start_year = gets.chomp
+puts 'Input an ending year:'
+end_year = gets.chomp
+puts ''
 
-while true
-  answer = gets.chomp
-  if answer == answer.downcase
-    bye_count = 0
-    puts "Huh! Speak up, Sonny!".upcase
-  elsif answer == "BYE"
-    bye_count = bye_count + 1
-    if bye_count == 3
-      puts "Okay then!".upcase
-      break
-    end
-  else
-    bye_count = 0
-    puts "No, not since #{number + rand(35)}".upcase
-  end
+while start_year.to_i <= end_year.to_i
+
+if start_year.to_f%400 == 0
+puts start_year
+elsif start_year.to_f%100 == 0
+elsif start_year.to_f%4 == 0
+puts start_year
+end
+
+start_year = start_year.to_i + 1
+
 end
